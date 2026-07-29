@@ -1,4 +1,4 @@
-# Requirements - 脆弱性対策
+# Requirements
 
 ## Intent Analysis Summary
 - **User Request**: finops-jp.github.ioプロジェクトの脆弱性対策

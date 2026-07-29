@@ -1,0 +1,13 @@
+{
+  "name": "Requirement Created Notification",
+  "version": "1.0.0",
+  "description": "要件ドキュメント作成時にステータスを「レビュー待ち」に更新する",
+  "when": {
+    "type": "fileCreated",
+    "patterns": ["aidlc-docs/inception/requirements/*.md"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "要件ドキュメントが新規作成されました。aidlc-docs/aidlc-state.md の該当ステージのステータスを「レビュー待ち」に更新してください。また、ドキュメント末尾にS03のレビュー観点チェックリスト（要件用）が含まれているか確認し、なければ追加してください。"
+  }
+}

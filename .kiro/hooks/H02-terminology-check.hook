@@ -1,0 +1,13 @@
+{
+  "name": "Terminology Consistency Check",
+  "version": "1.0.0",
+  "description": "要件/設計ドキュメント編集時に用語集との一貫性を自動チェック",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["aidlc-docs/inception/requirements/*.md", "aidlc-docs/construction/*/functional-design/*.md"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "編集されたドキュメント内の用語が docs/glossary.md の用語集と一貫しているか確認してください。不一致がある場合は、具体的にどの用語が用語集と異なるかを報告してください。用語集に存在しない新規用語がある場合は、用語集への追加を提案してください。"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Pre-Deploy Final Check",
+  "version": "1.0.0",
+  "description": "手動トリガーでnpm audit・ビルド・全テスト実行、結果サマリ生成",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "デプロイ前の最終チェックを実施してください。以下を順番に実行し、結果をサマリとして報告してください：\n\n1. `npm audit` — 脆弱性チェック（残存脆弱性がある場合は.kiro/steering/project-rules.md のフォーマットに従って詳細レポート）\n2. `npm run build` — ビルド成功確認\n3. `npm test -- --run` — 全テスト実行\n4. `npx tsc --noEmit` — 型チェック\n\n全結果を以下のフォーマットでサマリ化してください：\n\n| チェック項目 | 結果 | 詳細 |\n|---|---|---|\n| 脆弱性 | PASS/WARN/FAIL | [件数] |\n| ビルド | PASS/FAIL | [エラー内容] |\n| テスト | PASS/FAIL | [成功/失敗件数] |\n| 型チェック | PASS/FAIL | [エラー件数] |\n\n全てPASSの場合は「デプロイ可能」、1つでもFAILがあれば「デプロイ不可：要対応」と判定してください。"
+  }
+}

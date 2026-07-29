@@ -4,6 +4,8 @@
 
 `tests/visual/visual-regression.spec.ts` は、Playwrightを使ったVisual Regression Test（画面スクリーンショット比較テスト）のテストスクリプトです。サイトの主要ページのスクリーンショットを撮影し、このディレクトリ（`snapshots/`）に保存されたベースライン画像と比較します。
 
+※Playwright：ブラウザを自動操作するためのオープンソースのテストツール
+
 ---
 
 ## コード構造

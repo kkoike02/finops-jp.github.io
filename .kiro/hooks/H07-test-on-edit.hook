@@ -1,0 +1,13 @@
+{
+  "name": "Run Tests on Source Edit",
+  "version": "1.0.0",
+  "description": "ソースコード変更時にユニットテストを自動実行",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx"]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "npm test -- --run 2>&1 || echo TEST_FAILED"
+  }
+}

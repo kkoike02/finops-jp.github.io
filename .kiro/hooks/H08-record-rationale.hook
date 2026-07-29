@@ -1,0 +1,12 @@
+{
+  "name": "Record Design Rationale",
+  "version": "1.0.0",
+  "description": "AI実装完了時に変更内容と設計根拠をドキュメントに自動追記",
+  "when": {
+    "type": "agentStop"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "実装作業が完了しました。今回の変更について、docs/design-decisions.md に設計根拠を追記してください。\n\nフォーマット（.kiro/steering/S05-design-rationale.md に従う）：\n- 日付\n- 変更対象ファイル\n- 変更概要（何を変えたか）\n- 設計根拠（なぜその実装方法を選んだか）\n- 代替案（検討したが採用しなかった方法があれば）\n- 影響範囲（この変更が影響する他のコンポーネント）\n\nもし今回の変更が軽微な修正（typo修正、フォーマット変更等）のみであれば、記録不要と判断して「記録スキップ：軽微な修正のため」と報告してください。"
+  }
+}

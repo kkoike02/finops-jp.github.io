@@ -1,0 +1,13 @@
+{
+  "name": "Design Impact Analysis Update",
+  "version": "1.0.0",
+  "description": "設計ドキュメント修正時に影響分析セクションを自動更新",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["aidlc-docs/construction/*/functional-design/*.md"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "設計ドキュメントが修正されました。修正内容を分析し、ドキュメント内の「影響分析」セクションが最新の設計内容と整合しているか確認してください。影響分析が古くなっている場合は更新してください。特に、変更対象コンポーネントと影響を受ける既存機能の一覧が正確かチェックしてください。"
+  }
+}

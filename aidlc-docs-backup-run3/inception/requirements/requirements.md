@@ -13,8 +13,7 @@
 ### FR-01: 全脆弱性の修正（--force含む）
 - `npm audit fix --force` を実行し、すべての脆弱性を可能な限り修正する
 - 破壊的変更（Docusaurusダウングレード等）が発生する可能性あり
-- Visual Regression Testで見た目の変化を検証した上で判断
-
+- Visual Regression Testで見た目の変化を検証した上で判断する
 
 ### FR-02: Visual Regression Testing（既存ベースライン使用）
 - 既存のベースラインスクリーンショット（Run 2で脆弱性対策実行前に撮影済み）を理想状態として使用

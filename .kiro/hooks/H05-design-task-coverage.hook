@@ -1,0 +1,13 @@
+{
+  "name": "Design-Task Coverage Check",
+  "version": "1.0.0",
+  "description": "タスク定義作成時に設計の全要素がタスク化されているか検証",
+  "when": {
+    "type": "fileCreated",
+    "patterns": ["aidlc-docs/construction/*/code/*.md"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "タスク定義が作成されました。対応する設計ドキュメント（aidlc-docs/construction/ 配下の functional-design/）を読み込み、以下を検証してください：\n1. 設計で定義された全コンポーネントに対応するタスクが存在するか\n2. 設計で定義された全メソッド/APIエンドポイントがタスクでカバーされているか\n3. テスト作成タスクが含まれているか\n漏れがあれば具体的に報告してください。"
+  }
+}
