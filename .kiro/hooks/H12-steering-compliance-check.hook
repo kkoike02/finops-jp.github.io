@@ -1,0 +1,13 @@
+{
+  "name": "Steering Compliance Self-Check",
+  "version": "1.1.0",
+  "description": "aidlc-docs配下のファイル保存時にSteeringルールへの準拠を自問自答でチェック",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["aidlc-docs/**/*.md"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "保存されたaidlc-docsファイルの内容が、以下のSteeringルールに準拠しているか自己チェックしてください。\n\n**チェック対象ルール（該当するもののみ）**:\n- S01: 要件ドキュメント（requirements/）ならユーザーストーリー形式か\n- S02: 要件/設計なら影響分析セクションがあるか\n- S03: レビュー観点チェックリストが末尾にあるか\n- S04: 設計ドキュメント（functional-design/）ならMermaid図とセクション構成が正しいか\n- S05: 設計判断があるなら設計根拠が記録されているか\n- S07: タスク定義（code/）なら粒度・見積もり・完了条件が記載されているか\n- S08: タスク定義なら依存関係が図示されているか\n- S14: Confluence転記対象ならメタデータヘッダーがあるか\n\n**判定結果を簡潔に報告**:\n- 全て準拠 → 「準拠OK」\n- 違反あり → 違反箇所と修正内容を報告し、即座に修正してください"
+  }
+}

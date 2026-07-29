@@ -1,0 +1,13 @@
+{
+  "name": "Requirement-Design Consistency Check",
+  "version": "1.0.0",
+  "description": "設計ドキュメント作成時に要件との整合性を自動検証",
+  "when": {
+    "type": "fileCreated",
+    "patterns": ["aidlc-docs/construction/*/functional-design/*.md"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "設計ドキュメントが作成されました。aidlc-docs/inception/requirements/ の要件ドキュメントを読み込み、以下を検証してください：\n1. 全ての要件(REQ-XXX)が設計でカバーされているか\n2. 設計が要件のスコープ外の機能を含んでいないか\n3. 受入条件を満たせる設計になっているか\n矛盾や漏れがあれば具体的に報告してください。"
+  }
+}

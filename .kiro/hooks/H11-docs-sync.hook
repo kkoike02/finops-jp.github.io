@@ -1,0 +1,13 @@
+{
+  "name": "Documentation Sync Check",
+  "version": "1.0.0",
+  "description": "ドキュメント更新時に関連する設計書セクションとの同期を提案",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["docs/**/*.md", "aidlc-docs/**/*.md"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "ドキュメントが更新されました。以下を確認してください：\n\n1. 更新されたドキュメントと関連する他のドキュメント（requirements.md, design.md, tasks.md, changelog.md）の間に矛盾が生じていないか確認\n2. Confluenceへの転記が必要なドキュメントの場合、メタデータヘッダー（S14参照）の「最終更新」日付を今日に更新\n3. 関連ドキュメントの更新が必要な場合は、具体的にどのファイルのどのセクションを更新すべきか提案\n\n矛盾や更新漏れがなければ「同期確認完了：問題なし」と報告してください。"
+  }
+}
